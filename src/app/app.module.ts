@@ -5,10 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './Components/home/home.component';
 import {HttpClientModule} from '@angular/common/http';
+import { PhonePipe } from './Pipes/PhonePipe';
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    PhonePipe
   ],
   imports: [
     BrowserModule,

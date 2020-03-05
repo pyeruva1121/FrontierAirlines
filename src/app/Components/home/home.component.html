@@ -17,9 +17,9 @@
             <ul class="account-data-list" *ngFor="let act of activeAccounts">
               <li><label>Name:</label>{{act.LastName}}, {{act.FirstName}}</li>
               <li><label>Email:</label>{{act.Email}}</li>
-              <li><label>Phone Number:</label>{{act.PhoneNumber}}</li>
+              <li><label>Phone Number:</label>{{act.PhoneNumber | phone}}</li>
               <li><label>Amount Due:</label>{{act.AmountDue | currency}}</li>
-              <li><label>Due Date:</label>{{act.PaymentDueDate | date:'MM/dd/yyyy'}}</li>
+              <li *ngIf="act.PaymentDueDate"><label>Due Date:</label>{{act.PaymentDueDate | date:'MM/dd/yyyy'}}</li>
             </ul>
           </div>      
         </section>
@@ -31,9 +31,9 @@
             <ul class="account-data-list" *ngFor="let act of overDueAccounts">
                 <li><label>Name:</label>{{act.LastName}}, {{act.FirstName}}</li>
                 <li><label>Email:</label>{{act.Email}}</li>
-                <li><label>Phone Number:</label>{{act.PhoneNumber}}</li>
+                <li><label>Phone Number:</label>{{act.PhoneNumber | phone}}</li>
                 <li><label>Amount Due:</label>{{act.AmountDue | currency}}</li>
-                <li><label>Due Date:</label>{{act.PaymentDueDate | date:'MM/dd/yyyy'}}</li>
+                <li *ngIf="act.PaymentDueDate"><label>Due Date:</label>{{act.PaymentDueDate | date:'MM/dd/yyyy'}}</li>
               </ul>
           </div>
         </section>
@@ -45,9 +45,9 @@
             <ul class="account-data-list" *ngFor="let act of inActiveAccounts">
                 <li><label>Name:</label>{{act.LastName}}, {{act.FirstName}}</li>
                 <li><label>Email:</label>{{act.Email}}</li>
-                <li><label>Phone Number:</label>{{act.PhoneNumber}}</li>
+                <li><label>Phone Number:</label>{{act.PhoneNumber | phone}}</li>
                 <li><label>Amount Due:</label>{{act.AmountDue | currency}}</li>
-                <li><label>Due Date:</label>{{act.PaymentDueDate | date:'MM/dd/yyyy'}}</li>
+                <li *ngIf="act.PaymentDueDate"><label>Due Date:</label>{{act.PaymentDueDate | date:'MM/dd/yyyy'}}</li>
               </ul>
           </div>
         </div>
